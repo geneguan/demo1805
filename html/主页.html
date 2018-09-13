@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Document</title>
+        <!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" /> -->
+        <link rel="stylesheet" type="text/css" href="../css/base.css" />
+        <link rel="stylesheet" type="text/css" href="../css/gene.css" />
+        <script type="text/javascript">
+
+            document.addEventListener('DOMContentLoaded',()=>{
+
+                /*
+                    导航栏的思路：
+                        绑定点击事件，
+                        然后把页面滚动一定的长度（scrollY），
+                        使得刚好滚动到所点击导航相应的内容区域上。
+
+                 */
+
+                
+                let header = document.querySelector('.header');
+
+                let gd = document.querySelector('#gd');
+
+                window.onscroll = function() {
+
+                    // 点击返回顶部
+                    if(window.scrollY >= 100){
+                        gd.style.display = 'block';
+                    }
+                    else{
+                        gd.style.display = 'none';
+                    }
+
+                    // 菜单吸顶
+                    if(window.scrollY > 0){
+                        header.className = 'header fixed con';
+                    }
+                    else{
+                        header.className = 'header con';
+                    }
+                }
+
+                gd.onclick = ()=>{
+                    let timer = setInterval(()=>{
+                        // 计算缓冲速度（差值越大速度越大）(使得无论滚动多少，每次返回的时间都几乎一样)
+                        let speed = window.scrollY/5;
+                        scrollBy(0, -speed);
+                        if(window.scrollY <= 0){
+                            clearInterval(timer);
+                            // 重置目标值
+                            scrollTo(0,0);
+                        }
+                    }, 30);
+                }
+
+                // 鼠标滑过的效果
+                gd.onmouseover = ()=>{
+                    gd.style.opacity = 0.6;
+                }
+                gd.onmouseout = ()=>{
+                    gd.style.opacity = 1;
+                }
+            });
+
+        </script>
+    </head>
+    <body>
+
+    <!-- header -->
+        <header id="header">
+            <header class="header con">
+                <div class="logo fl">
+                    <a href="#"><img src="../images/logo.png" height="88" width="220" alt=""  title="gene"/></a>
+                </div>
+                <div class="text fl">
+                    <p>huanying</p>
+                </div>
+                <div class="nav fr">
+                    <ul>
+                        <li><a href="#1">视频专区</a></li>
+                        <li><a href="#2">影视专区</a></li>
+                        <li><a href="#3">音乐专区</a></li>
+                        <li><a href="#4">购物专区</a></li>
+                        <li class="last"><a href="#5">娱乐专区</a></li>
+                    </ul>
+                </div>
+                
+            </header>
+        </header>
+
+    <!-- banner 轮播图 -->
+        <div id="banner">
+            <div class="banner con">
+                <img src="../images/banner1.png" height="270" width="1160" alt="" />
+            </div>
+        </div>
+
+    <!-- main -->
+        <main id="main">
+            <main class="main con">
+                <div class="video_web" id="1">
+                    <p>视频网站专区</p>
+                </div>
+                <div class="line_web" id="2">
+                    <p>影视资源专区</p>
+                </div>
+                <div class="music" id="3">
+                    <p>音乐网站专区</p>
+                </div>
+                <div class="shopping" id="4">
+                    <p>购物网站专区</p>
+                </div>
+                <div class="ent" id="5">
+                    <p>娱乐新闻专区</p>
+                </div>
+                <div id="gd">
+                    <img src="../images/gd.png" height="43" width="43" alt="" />
+                </div>
+            </main>
+        </main>
+
+    <!-- footer -->
+        <footer id="footer">
+            <footer class="footer con">
+                
+            </footer>
+        </footer>
+    </body>
+</html>

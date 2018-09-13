@@ -1,0 +1,38 @@
+/* 
+* @Author: Marte
+* @Date:   2018-09-08 09:16:23
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-09-11 20:36:05
+*/
+/*header*/
+#header{background: #FFF;height: 88px;}
+.header{height: 88px;background: #FFF;}
+.header .logo{width: 220px;height: 88px;margin-left: 25px;}
+.header .text{width: 250px;height: 88px;}
+.header .text p{width: 120px;height: 48px;margin: 20px auto;text-align: center;font-size: 20px;line-height: 48px;color: skyblue;}
+.header .nav{margin-right: 20px;}
+.header.nav ul{float: left;height: 88px;}
+.header .nav ul li{float: left;}
+.header .nav ul li a{display: block;height: 88px;margin: 0 15px 0 16px;font-size: 24px;line-height: 88px;color: #666;font-family: 楷体;font-weight: 900;}
+.header .nav ul li:hover{background: #DEDEDE;}
+.header .nav ul li a:hover{color: #000;}
+.fixed{position: fixed;top:0;left: 52px;box-shadow: 0px 3px 1px 0px #AAA;}
+
+/*banner*/
+#banner{background: #FFF;}
+.banner{height: 270px;}
+
+/*main*/
+#main{background: #ccc;}
+.main{height: 1136px;}
+.main .video_web{height: 360px;background: #777;}
+.main .line_web{height: 240px;background: #888;}
+.main .music{height: 180px;background: #999;}
+.main .shopping{height: 200px;background: #aaa;}
+.main .ent{height: 156px;background: #bbb;}
+.main p{height: 36px;margin-left: 10px;font-size: 18px;line-height: 36px;}
+.main #gd{display: none;width: 43px;height: 43px;border: 1px solid #3D5D6A;border-radius: 3px;overflow: hidden;position: fixed;right: 6px;top: 600px;opacity: 1;}
+
+/*footer*/
+#footer{background: #bbb;}
+.footer{height: 48px;background: #666;}
